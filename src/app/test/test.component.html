@@ -1,0 +1,7 @@
+<div class="container">
+    <form [formGroup]="myForm" (ngSubmit)="saveUser()">
+        <label for="firstname">Firstname :</label>
+        <input type="text" name="firstname" id="firstname" formControlName="firstname">
+        <button>send</button>
+    </form>
+</div>
