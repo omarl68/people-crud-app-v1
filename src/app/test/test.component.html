@@ -1,7 +1,26 @@
 <div class="container">
     <form [formGroup]="myForm" (ngSubmit)="saveUser()">
-        <label for="firstname">Firstname :</label>
-        <input type="text" name="firstname" id="firstname" formControlName="firstname">
-        <button>send</button>
+        <div class="form-row">
+            <div class="form-group">
+                <label for="firstname">Firstname :</label>
+                <input type="text" class="form-control" name="firstname" id="firstname" formControlName="firstname">
+                <div *ngIf="firstname.touched && firstname.invalid">
+                    <small *ngIf="firstname.errors.required" class="text-danger">
+                        Firstname is required
+                    </small><br>
+                    <small *ngIf="firstname.errors.pattern" class="text-danger">
+                        Invalid Firstname 
+                     </small><br>
+                     <small *ngIf="firstname.errors.minlength" class="text-danger">
+                         Firstname must contain two characters at least
+                     </small>
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col">
+                <input type="submit" value="Send">
+            </div>
+        </div>
     </form>
 </div>

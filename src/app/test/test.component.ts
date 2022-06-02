@@ -8,17 +8,24 @@ import{FormGroup ,FormControl ,FormBuilder ,Validators} from '@angular/forms'
 })
 export class TestComponent implements OnInit {
   
-  myForm: FormGroup
+  myForm:any= FormGroup
   constructor(private fb: FormBuilder) {
     let formControl = {
-      firstname : new FormControl
+      firstname : new FormControl('',[
+        Validators.required,
+        Validators.pattern("[a-z .'-]+"),
+        Validators.minLength(2)
+      ])
     }
     this.myForm = this.fb.group(formControl);
    }
-
+   get firstname(){
+    return this.myForm.get('firstname');
+  }
   ngOnInit(): void {
     
   }
+
 
   saveUser(){
     console.log(this.myForm.value);
