@@ -49,7 +49,7 @@ export class UpdateUserComponent implements OnInit {
   get phone() { return this.updateUserForm.get('phone') }
 
 
-  ngOnInit(): void {
+  ngOnInit(): void {  
 
     let idUser = this.route.snapshot.params['id'];
     console.log(this.route)

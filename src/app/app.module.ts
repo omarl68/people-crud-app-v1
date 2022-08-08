@@ -16,6 +16,7 @@ import { FormsModule , ReactiveFormsModule } from '@angular/forms';
 import { AddUserComponent } from './add-user/add-user.component';
 import { UpdateUserComponent } from './update-user/update-user.component';
 import { ToastrModule, ToastNoAnimation, ToastNoAnimationModule } from 'ngx-toastr';
+import { DisplayListComponent } from './display-list/display-list.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { ToastrModule, ToastNoAnimation, ToastNoAnimationModule } from 'ngx-toas
     Page404Component,
     AddUserComponent,
     UpdateUserComponent,
+    DisplayListComponent,
 
   ],
   imports: [
